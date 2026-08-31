@@ -98,7 +98,6 @@ const SITE_DATA = {
         { image: "images/1ho-020.jpg" },
         { image: "images/1ho-019.jpg" },
         { image: "images/1ho-018.jpg" },
-        { image: "images/1ho-017.jpg" },
         { image: "images/1ho-016.jpg" },
         { image: "images/1ho-015.jpg" },
         { image: "images/1ho-013.jpg" },
@@ -236,6 +235,7 @@ const SITE_DATA = {
       { image: "images/archive-065.jpg" },
       { image: "images/archive-066.jpg" },
       { image: "images/archive-067.jpg" },
+      { image: "images/archive-068.jpg" },
     ],
     // ▲▲▲ 여기까지 ▲▲▲
   },
