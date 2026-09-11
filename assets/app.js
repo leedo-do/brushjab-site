@@ -601,7 +601,12 @@
       "</dl>" +
       '<div class="modal__actions">' +
       (isArchive || art.sold
-        ? '<div class="sold-note"><p>이 작품은 이미 판매 완료되었습니다</p><p>비슷한 스타일의 작품을 원하시면 문의해 주세요</p></div>'
+        ? '<div class="sold-note"><p>이 작품은 이미 판매 완료되었습니다</p><p>비슷한 스타일의 작품을 원하시면 문의해 주세요</p></div>' +
+          '<div class="btn-group">' +
+          '<a class="btn btn--grad" href="' +
+          esc(KAKAO_URL) +
+          '" target="_blank" rel="noopener noreferrer">오픈카카오톡으로 문의</a>' +
+          "</div>"
         : '<div class="btn-group">' +
           '<a class="btn btn--grad" href="' +
           esc(INQUIRY_URL) +
