@@ -12,6 +12,7 @@
   var DATA = typeof SITE_DATA === "object" && SITE_DATA ? SITE_DATA : {};
   var SITE = DATA.site || {};
   var INQUIRY_URL = SITE.inquiryUrl || "#";
+  var KAKAO_URL = SITE.kakaoUrl || "#";
   var GALLERIES = Array.isArray(DATA.galleries) ? DATA.galleries : [];
   var ARCHIVE = DATA.archive || { artworks: [] };
   var ARTIST = DATA.artist || {};
@@ -601,14 +602,46 @@
       '<div class="modal__actions">' +
       (isArchive || art.sold
         ? '<div class="sold-note"><p>이 작품은 이미 판매 완료되었습니다</p><p>비슷한 스타일의 작품을 원하시면 문의해 주세요</p></div>'
-        : '<a class="btn btn--grad" href="' +
+        : '<div class="btn-group">' +
+          '<a class="btn btn--grad" href="' +
           esc(INQUIRY_URL) +
-          '" target="_blank" rel="noopener noreferrer">구매 문의하기</a>') +
+          '" target="_blank" rel="noopener noreferrer">SOOP 채널 문의</a>' +
+          '<a class="btn btn--grad" href="' +
+          esc(KAKAO_URL) +
+          '" target="_blank" rel="noopener noreferrer">오픈카카오톡 문의</a>' +
+          "</div>") +
       "</div>" +
       "</div>" +
       "</div>" +
       "</div>";
 
+    modal.hidden = false;
+    lockScroll();
+    var close = modal.querySelector("[data-close-modal]");
+    if (close) close.focus();
+  }
+
+  /* ---------- 구매문의 선택창 (SOOP / 오픈카카오톡) ---------- */
+  function openInquiryChoice() {
+    if (!modal) return;
+    modal.innerHTML =
+      '<div class="modal__box modal__box--compact" role="document">' +
+      '<button class="modal__close" type="button" data-close-modal="1" aria-label="닫기">' +
+      ICON.close +
+      "</button>" +
+      '<div class="inquiry-choice">' +
+      '<h3 class="modal__title grad-text" style="text-align:center">구매 문의</h3>' +
+      '<p style="text-align:center;color:var(--slate-600);margin-bottom:20px;">원하시는 방법으로 문의해 주세요</p>' +
+      '<div class="btn-group">' +
+      '<a class="btn btn--grad" href="' +
+      esc(INQUIRY_URL) +
+      '" target="_blank" rel="noopener noreferrer">SOOP 채널 문의</a>' +
+      '<a class="btn btn--grad" href="' +
+      esc(KAKAO_URL) +
+      '" target="_blank" rel="noopener noreferrer">오픈카카오톡 문의</a>' +
+      "</div>" +
+      "</div>" +
+      "</div>";
     modal.hidden = false;
     lockScroll();
     var close = modal.querySelector("[data-close-modal]");
@@ -661,12 +694,12 @@
       return;
     }
 
-    // 카드 안의 '구매문의'는 상세창 대신 문의 채널을 엽니다.
+    // 카드 안의 '구매문의'는 상세창 대신 문의 채널 선택창을 엽니다.
     var inquiry = t.closest && t.closest("[data-inquiry]");
     if (inquiry) {
       e.preventDefault();
       e.stopPropagation();
-      window.open(INQUIRY_URL, "_blank", "noopener,noreferrer");
+      openInquiryChoice();
       return;
     }
 
@@ -702,8 +735,11 @@
 
   /* ---------- 문의 링크 연결 ---------- */
   function initLinks() {
-    document.querySelectorAll("[data-inquiry-link]").forEach(function (a) {
+    document.querySelectorAll('[data-inquiry-link="soop"]').forEach(function (a) {
       a.setAttribute("href", INQUIRY_URL);
+    });
+    document.querySelectorAll('[data-inquiry-link="kakao"]').forEach(function (a) {
+      a.setAttribute("href", KAKAO_URL);
     });
   }
 

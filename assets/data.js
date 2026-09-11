@@ -33,8 +33,9 @@ const SITE_DATA = {
   site: {
     name: "붓잽이 웹사이트 - Brushjab Gallery",
     url: "https://www.brushjab.com",
-    // 구매 문의 버튼을 누르면 열리는 주소
+    // 구매 문의 버튼을 누르면 열리는 주소 (SOOP 채널 / 오픈카카오톡, 둘 다 노출됩니다)
     inquiryUrl: "https://ch.sooplive.co.kr/km5430678",
+    kakaoUrl: "https://open.kakao.com/o/sqcBHoAh",
   },
 
   /* ---------------------------------------------------------------

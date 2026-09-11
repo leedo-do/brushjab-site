@@ -341,6 +341,19 @@ ul {
   box-shadow: var(--shadow-xl);
   transform: scale(1.05);
 }
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.btn-group--center {
+  justify-content: center;
+}
+.btn-group .btn--grad,
+.btn-group .btn--cta {
+  width: auto;
+  flex: 1 1 180px;
+}
 
 /* ---------- 네비게이션 ---------- */
 .nav {
@@ -1207,6 +1220,17 @@ ul {
   background: var(--white);
   border-radius: var(--radius-lg);
   animation: pop-in 0.25s ease both;
+}
+.modal__box--compact {
+  max-width: 28rem;
+}
+.inquiry-choice {
+  padding: 40px 32px 32px;
+}
+@media (max-width: 640px) {
+  .inquiry-choice {
+    padding: 32px 20px 20px;
+  }
 }
 .modal__close {
   position: absolute;
