@@ -410,18 +410,18 @@
       (art.medium ? "<p>재료: " + esc(art.medium) + "</p>" : "") +
       (isArchive && art.soldDate ? "<p>판매일: " + esc(art.soldDate) + "</p>" : "") +
       "</div>" +
-      '<div class="card__foot card__foot--split">' +
-      '<span class="card__price' +
-      (accent === "pink" ? " card__price--pink" : accent === "amber" ? " card__price--amber" : "") +
-      ' font-en">' +
-      won(art.price) +
-      "</span>" +
       (isArchive
         ? ""
-        : '<span class="btn ' +
+        : '<div class="card__foot card__foot--split">' +
+          '<span class="card__price' +
+          (accent === "pink" ? " card__price--pink" : accent === "amber" ? " card__price--amber" : "") +
+          ' font-en">' +
+          won(art.price) +
+          "</span>" +
+          '<span class="btn ' +
           (accent === "pink" ? "btn--outline-pink" : "btn--outline") +
-          '" data-inquiry="1">구매문의</span>') +
-      "</div>" +
+          '" data-inquiry="1">구매문의</span>' +
+          "</div>") +
       "</div>" +
       "</button>"
     );
@@ -567,7 +567,7 @@
     var specs = [];
     if (art.size) specs.push(["크기", esc(art.size), ""]);
     if (art.medium) specs.push(["재료", esc(art.medium), ""]);
-    specs.push([isArchive ? "판매가격" : "판매가격", won(art.price), priceClass]);
+    if (!isArchive) specs.push(["판매가격", won(art.price), priceClass]);
     if (isArchive && art.soldDate) specs.push(["판매일", esc(art.soldDate), ""]);
 
     modal.innerHTML =
