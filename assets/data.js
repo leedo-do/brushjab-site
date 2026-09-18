@@ -85,7 +85,6 @@ const SITE_DATA = {
       // ▼▼▼ 1호 작품을 여기에 추가하세요 ▼▼▼
       artworks: [
         { image: "images/1ho-032.jpg" },
-        { image: "images/1ho-031.jpg" },
         { image: "images/1ho-030.jpg" },
         { image: "images/1ho-029.jpg" },
         { image: "images/1ho-027.jpg" },
@@ -95,7 +94,6 @@ const SITE_DATA = {
         { image: "images/1ho-023.jpg" },
         { image: "images/1ho-022.jpg" },
         { image: "images/1ho-021.jpg" },
-        { image: "images/1ho-020.jpg" },
         { image: "images/1ho-019.jpg" },
         { image: "images/1ho-016.jpg" },
         { image: "images/1ho-015.jpg" },
@@ -237,6 +235,8 @@ const SITE_DATA = {
       { image: "images/archive-068.jpg" },
       { image: "images/archive-069.jpg" },
       { image: "images/archive-070.jpg" },
+      { image: "images/archive-071.jpg" },
+      { image: "images/archive-072.jpg" },
     ],
     // ▲▲▲ 여기까지 ▲▲▲
   },
