@@ -84,7 +84,6 @@ const SITE_DATA = {
 
       // ▼▼▼ 1호 작품을 여기에 추가하세요 ▼▼▼
       artworks: [
-        { image: "images/1ho-032.jpg" },
         { image: "images/1ho-030.jpg" },
         { image: "images/1ho-027.jpg" },
         { image: "images/1ho-026.jpg" },
@@ -237,6 +236,7 @@ const SITE_DATA = {
       { image: "images/archive-071.jpg" },
       { image: "images/archive-072.jpg" },
       { image: "images/archive-073.jpg" },
+      { image: "images/archive-074.jpg" },
     ],
     // ▲▲▲ 여기까지 ▲▲▲
   },
