@@ -90,7 +90,6 @@ const SITE_DATA = {
         { image: "images/1ho-053.jpg" },
         { image: "images/1ho-054.jpg" },
         { image: "images/1ho-033.jpg" },
-        { image: "images/1ho-035.jpg" },
         { image: "images/1ho-036.jpg" },
         { image: "images/1ho-037.jpg" },
         { image: "images/1ho-038.jpg" },
