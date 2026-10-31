@@ -260,6 +260,7 @@ const SITE_DATA = {
       { image: "images/archive-075.jpg" },
       { image: "images/archive-076.jpg" },
       { image: "images/archive-077.jpg" },
+      { image: "images/archive-078.jpg" },
     ],
     // ▲▲▲ 여기까지 ▲▲▲
   },
